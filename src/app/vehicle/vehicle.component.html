@@ -1,6 +1,45 @@
-
-<div class='panel panel-primary'>
-    <div class='panel-heading'>
-        {{pageTitle}}
+<div>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid navColor">
+      <a class="navbar-brand ">{{pageTitle}}</a>
     </div>
+  </nav>
+  <div class="container">
+    <form novalidate >
+        <div class="form-group">
+            <div class="inlineItems">
+                <label class="vehicle-label">Make</label>
+                <select class="form-control vehicle-dropdowns" name="make" [ngModel]="vehicle.make" (ngModelChange)="makeChanged(vehicle.make = $event)">
+                    <option value="default">Select a Make...</option>
+                    <option *ngFor="let make of makes" [ngValue]="make">
+                        {{ make.makeName }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="inlineItems">
+                <label class="vehicle-label">Model</label>
+                <select class="form-control vehicle-dropdowns" name="model" [disabled]="disableModel" [ngModel]="vehicle.model" (ngModelChange)="modelChanged(vehicle.model = $event)">
+                    <option *ngFor="let model of models">
+                        {{ model.modelName }}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="inlineItems">
+                <label class="vehicle-label">Image</label>
+                <img *ngIf="!disableModel" class="vehicleImage" src="{{vehicleImageUrl}}"/>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+<!--<footer class="footer">This site is powerd by Angular2 and Node js</footer>-->
+<div class="footer">
+      <div class="container">
+        <p class="text-muted">This site is powered by Angular2 and Node js.</p>
+      </div>
 </div>

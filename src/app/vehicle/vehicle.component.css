@@ -1,0 +1,37 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.navColor {
+    background-color: lightgray !important;
+}
+
+.inlineItems {
+    display: flex !important;
+}
+
+.vehicle-label {
+    height: 30px;
+    line-height: 30px;
+    width: 75px;
+}
+
+.vehicle-dropdowns {
+    width: 175px;
+}
+
+.vehicleImage {
+    height: 300px !important;
+    width: 600px !important;   
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: lightgray;
+ border-top: 3px solid lightgray;   
+}
+

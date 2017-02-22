@@ -1,25 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
-import { Vehicle } from './vehicle/vehicle.component';
+import { VehicleService } from './vehicle/vehicle.service';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    Vehicle
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot([
-      {path: 'vehicles', component: Vehicle},
-      {path: '**', component: Vehicle}
-    ]),
+    FormsModule
   ],
-  providers: [],
+  providers: [VehicleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
